@@ -13,12 +13,12 @@
         app:showAsAction="always"
         />
     <item android:id="@+id/dialer"
-        android:title="Contact Us"
+        android:title="Customer Service"
         app:showAsAction="never"
         />
-    <item android:id="@+id/email"
-        android:title="eMail"
-        app:showAsAction="always"
+    <item android:id="@+id/feedback"
+        android:title="Send us Feedback"
+        app:showAsAction="never"
         />
     <item android:id="@+id/save"
         android:title="Help"

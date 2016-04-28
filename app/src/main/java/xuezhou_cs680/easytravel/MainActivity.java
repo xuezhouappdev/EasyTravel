@@ -118,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
                 return true;
 
-            case R.id.email:
-                uri = Uri.parse("mailto:hbentley@bentley.edu");
+            case R.id.feedback:
+                uri = Uri.parse("mailto:xuezhou9019@gmail.com");
                 startActivity(new Intent(Intent.ACTION_SENDTO, uri));
                 return true;
 
