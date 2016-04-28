@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
@@ -41,12 +42,33 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+        btn2.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Uri uri;
+                uri = Uri.parse("geo:0,0?q=175 Forest Street waltham ma");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);}
+
+
+            }
+
+
+        });
+
+
+
+
+
+        btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri uri;
 
-                uri = Uri.parse("http://www.bentley.edu");
+                uri = Uri.parse("https://weather.com/weather/today/l/USMA0046:1:US");
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });
