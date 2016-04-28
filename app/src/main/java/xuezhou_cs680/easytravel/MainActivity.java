@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Uri uri;
-                uri = Uri.parse("geo:0,0?q=175 Forest Street waltham ma");
+                uri = Uri.parse("geo:<lat>,<long>?z=10");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.maps:
-                uri = Uri.parse("geo:0,0?q=175 Forest Street waltham ma");
+                uri = Uri.parse("geo:0,0?q=restaurants");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 	        	/*For API18 and 19 Google Maps is not on Launch Pad
              	 so should first check if Package is present to avoid app crashing.
