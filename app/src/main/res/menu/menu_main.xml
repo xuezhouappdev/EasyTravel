@@ -1,0 +1,38 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="xuezhou_cs680.easytravel.MainActivity">
+
+
+    <item android:id="@+id/web"
+        android:title="Web"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/maps"
+        android:title="Maps"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/dialer"
+        android:title="Contact Us"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/email"
+        android:title="eMail"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/save"
+        android:title="Help"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/exit"
+        android:title="Exit"
+        app:showAsAction="never"
+        />
+
+
+
+
+
+
+
+</menu>
