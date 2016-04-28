@@ -4,14 +4,14 @@
     tools:context="xuezhou_cs680.easytravel.MainActivity">
 
 
-    <item android:id="@+id/web"
+   <!-- <item android:id="@+id/web"
         android:title="Web"
-        app:showAsAction="always"
+        app:showAsAction="never"
         />
     <item android:id="@+id/maps"
         android:title="Maps"
-        app:showAsAction="always"
-        />
+        app:showAsAction="never"
+        />-->
     <item android:id="@+id/dialer"
         android:title="Customer Service"
         app:showAsAction="never"
@@ -20,9 +20,9 @@
         android:title="Send us Feedback"
         app:showAsAction="never"
         />
-    <item android:id="@+id/save"
-        android:title="Help"
-        app:showAsAction="never"
+    <item android:id="@+id/about"
+        android:title="About"
+        app:showAsAction="always"
         />
     <item android:id="@+id/exit"
         android:title="Exit"

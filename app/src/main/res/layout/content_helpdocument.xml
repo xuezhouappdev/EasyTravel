@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="xuezhou_cs680.easytravel.Helpdocument"
+    tools:showIn="@layout/activity_helpdocument">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="About This App"
+            android:id="@+id/textView" />
+
+
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/textViewDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:textSize="14dp"
+            android:text="★Description:\n    Life is too short to be complicated. Whether your trip is for a few days or couples of months,keeping track of journey by notebook is not an easy thing. EasyTravel provides a great opportunity for our audience aiming at saving travel time and archiving memorable moments during the trip by simply planing and tracking travel expenses,sharing amazing journey with friends instantly. Say goodbye to the bulky notebook and enjoy your fun trip with us.             \n\n★Major Functions:\n    Plan and track your travel expenses."/>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

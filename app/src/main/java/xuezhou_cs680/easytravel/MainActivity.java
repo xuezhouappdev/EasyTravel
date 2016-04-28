@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         Uri uri;
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.web:
+            /*case R.id.web:
                 uri = Uri.parse("http://www.bentley.edu");
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
                 return true;
@@ -104,14 +104,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.maps:
                 uri = Uri.parse("geo:0,0?q=restaurants");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-	        	/*For API18 and 19 Google Maps is not on Launch Pad
+	        	*//*For API18 and 19 Google Maps is not on Launch Pad
              	 so should first check if Package is present to avoid app crashing.
              	 The API 23 emulator using the Intel instruction set would also crash here
              	 without first checking.
-            	*/
+            	*//*
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);}
-                return true;
+                return true;*/
 
             case R.id.dialer:
                 uri = Uri.parse("tel:8574004109");
@@ -123,8 +123,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_SENDTO, uri));
                 return true;
 
-            case R.id.save:
-                //dud
+            case R.id.about:
+                Intent intenthelp = new Intent(this,Helpdocument.class);
+                   startActivity(intenthelp);
+
+
                 return true;
 
             case R.id.exit:
