@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v){
-                Intent intentCalculator = new Intent(v.getContext(),CalculatorActivity.class);
+                Intent intentCalculator = new Intent(v.getContext(),ExpenseActivity.class);
                 startActivity(intentCalculator);
             }
         });

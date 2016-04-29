@@ -70,7 +70,11 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_expk);
+
+
+
+
         list = (ListView) findViewById(R.id.list_items);
         location = (EditText) findViewById(R.id.location);
         date = (EditText) findViewById(R.id.date);
@@ -157,7 +161,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
         super.onCreateOptionsMenu(menu);
 
         MenuItem item1 = menu.add(0, PICK1, Menu.NONE, "Save");
-        MenuItem item2 = menu.add(0, PICK2, Menu.NONE, "Finish");
+        MenuItem item2 = menu.add(0, PICK2, Menu.NONE, "Back");
         MenuItem item3 = menu.add(0, PICK3, Menu.NONE, "Add");
         MenuItem item4 = menu.add(0, PICK4, Menu.NONE, "Delete");
         MenuItem item5 = menu.add(0, PICK5, Menu.NONE, "Update");
