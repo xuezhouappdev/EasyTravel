@@ -15,7 +15,7 @@ public class Animation extends AppCompatActivity {
     float startposition;
     ViewFlipper viewFlipper = null;
     private GestureDetector gestureDetector = null;
-    private Button bt;
+    private Button bt ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
