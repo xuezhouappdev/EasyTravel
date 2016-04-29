@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    android:weightSum="1"
+                    android:layout_width="wrap_content">
+
+                    <EditText
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/editext_border_expk"
+                        android:hint="Location"
+                        android:textColor="@color/colorLightsteelblue"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="10dp"
+                        android:textSize="17dp"
+                        android:layout_weight="1.57" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:layout_weight="13"
+                    android:layout_width="wrap_content">
+
+                    <!-- <View
+                         android:layout_height="match_parent"
+                         android:layout_width="1dp"
+                         android:background="@color/colorBlack"/>-->
+
+                    <EditText
+                        android:id="@+id/date"
+                        android:layout_width="65dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/editext_border_expk"
+                        android:hint="Date"
+                        android:textColor="@color/colorLightsteelblue"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="10dp"
+                        android:textSize="17dp"
+                        android:layout_weight="19.01" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:weightSum="1"
+                        android:layout_width="wrap_content">
+
+                        <EditText
+                            android:id="@+id/dollar_spent"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/editext_border_expk"
+                            android:hint="Expense Amount"
+                            android:textColor="@color/colorLightsteelblue"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="10dp"
+                            android:textSize="17dp"
+                            android:layout_weight="0.35" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- <ScrollView
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">-->
+
+        <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/list_items"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.50"/>
+
+
+        <!--
+                </ScrollView>-->
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
