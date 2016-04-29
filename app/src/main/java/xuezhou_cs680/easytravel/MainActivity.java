@@ -43,6 +43,20 @@ public class MainActivity extends AppCompatActivity {
         menuInflater = getMenuInflater();
 
 
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Intent intentCalculator = new Intent(v.getContext(),CalculatorActivity.class);
+                startActivity(intentCalculator);
+            }
+        });
+
+
+
+
+
         btn2.setOnClickListener(new View.OnClickListener(){
 
             @Override
