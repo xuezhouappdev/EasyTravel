@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         menuInflater = getMenuInflater();
 
 
-
         btn2.setOnClickListener(new View.OnClickListener(){
 
             @Override
