@@ -16,6 +16,7 @@ public class Animation extends AppCompatActivity {
     ViewFlipper viewFlipper = null;
     private GestureDetector gestureDetector = null;
     private Button bt ;
+    //testing
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
