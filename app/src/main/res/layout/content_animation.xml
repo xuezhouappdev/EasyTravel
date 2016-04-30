@@ -66,15 +66,15 @@
 
                 >
                 <Button
-                    android:layout_width="150dp"
-                    android:layout_height="80dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
                     android:layout_alignBottom="@+id/Image04"
-                    android:layout_marginLeft="120dp"
+                    android:layout_marginLeft="110dp"
                     android:background="@drawable/buttom"
                     android:layout_alignParentBottom="true"
 
 
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="45dp"
                     android:id="@+id/button01"/>
 
                 <ImageView
