@@ -55,7 +55,7 @@
                     android:id="@+id/Image03"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:src="@drawable/ph03"
+                    android:src="@drawable/image06"
                     android:gravity="center" />
             </LinearLayout>
             <!-- Fouth page-->
@@ -79,7 +79,7 @@
                     android:id="@+id/Image04"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:src="@drawable/photo4"
+                    android:src="@drawable/image07"
                     android:gravity="center" />
 
 
