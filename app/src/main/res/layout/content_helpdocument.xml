@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:textSize="14dp"
-            android:text="★Description:\n    Life is too short to be complicated. Whether your trip is for a few days or couples of months,keeping track of journey by notebook is not an easy thing. EasyTravel provides a great opportunity for our audience aiming at saving travel time and archiving memorable moments during the trip by simply planing and tracking travel expenses,sharing amazing journey with friends instantly. Say goodbye to the bulky notebook and enjoy your fun trip with us.             \n\n★Major Functions:\n    Plan and track your travel expenses."/>
+            android:text="★Description:\n    Life is too short to be complicated. Whether your trip is for a few days or couples of months,keeping track of journey by notebook is not an easy thing. EasyTravel provides a great opportunity for our audience aiming at saving travel time and archiving memorable moments during the trip by simply planing and tracking travel expenses,sharing amazing journey with friends instantly. Say goodbye to the bulky notebook and enjoy your fun trip with us.             \n\n★Major Functions:\n    Plan and track your travel expenses.\n    Provide timely reminders for flight or hotel reservation.\n    See your expense location on the GoogleMap.\n    Weather, Web, On-time customer service"/>
 
 
         </ScrollView>
