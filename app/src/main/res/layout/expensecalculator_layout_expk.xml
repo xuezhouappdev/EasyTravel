@@ -20,7 +20,7 @@
                 android:orientation="horizontal"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/colorLightOrange">
+                android:background="@color/colorLightBlue">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                     android:gravity="center_horizontal"
 
                     android:text="Expense Calculator"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:id="@+id/title"
@@ -49,7 +49,7 @@
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorLightOrange">
+            android:background="@color/colorLightBlue">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -108,7 +108,7 @@
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorLightOrange">
+            android:background="@color/colorLightBlue">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -166,7 +166,7 @@
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorLightOrange">
+            android:background="@color/colorLightBlue">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -221,7 +221,7 @@
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorLightOrange">
+            android:background="@color/colorLightBlue">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -278,7 +278,7 @@
             android:orientation="horizontal"
             android:layout_height="80dp"
             android:layout_weight="7"
-            android:background="@color/colorLightOrange"
+            android:background="@color/colorLightBlue"
             >
 
             <TableRow
@@ -314,7 +314,7 @@
             android:orientation="horizontal"
             android:layout_height="53dp"
             android:layout_weight="7"
-            android:background="@color/colorLightOrange"
+            android:background="@color/colorLightBlue"
             android:weightSum="1">
 
             <TableRow
