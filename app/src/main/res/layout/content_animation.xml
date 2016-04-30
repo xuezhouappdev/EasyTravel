@@ -70,7 +70,7 @@
                     android:layout_height="50dp"
                     android:layout_alignBottom="@+id/Image04"
                     android:layout_marginLeft="110dp"
-                    android:background="@drawable/buttom"
+                    android:background="@drawable/animation_buttomnew"
                     android:layout_alignParentBottom="true"
 
 
