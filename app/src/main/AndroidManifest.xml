@@ -82,8 +82,9 @@
         <!--ting reminder -->
         <activity
             android:name=".ReminderActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_reminder"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

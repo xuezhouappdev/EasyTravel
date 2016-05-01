@@ -59,7 +59,7 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         listview = (ListView)findViewById(R.id.list);
         listview.setOnItemClickListener(this);
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, number);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, number);
         listview.setAdapter(adapter);
 
         try {
@@ -100,8 +100,8 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         //*** set the date and time ***//
         Calendar c = Calendar.getInstance();
         //c.set(year,month,day,hour,minute);
-        c.set(Calendar.HOUR, 05);
-        c.set(Calendar.MINUTE, 35);
+        c.set(Calendar.HOUR, 06);
+        c.set(Calendar.MINUTE,10);
         c.set(Calendar.SECOND, 20);
         c.set(Calendar.AM_PM, Calendar.PM);
 
