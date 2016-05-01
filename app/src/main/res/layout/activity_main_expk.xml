@@ -53,11 +53,11 @@
                         android:layout_width="65dp"
                         android:layout_height="40dp"
                         android:background="@drawable/editext_border_expk"
-                        android:hint="Date"
+                        android:hint="MM-DD-YYYY"
                         android:textColor="@color/colorLightsteelblue"
                         android:paddingLeft="8dp"
                         android:paddingTop="10dp"
-                        android:textSize="17dp"
+                        android:textSize="15dp"
                         android:layout_weight="19.01" />
 
                     <LinearLayout
