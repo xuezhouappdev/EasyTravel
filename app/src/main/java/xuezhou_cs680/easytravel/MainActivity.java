@@ -99,6 +99,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCalculator = new Intent(v.getContext(),ExpenseActivity.class);
+                startActivity(intentCalculator);
+            }
+        });
+
 
 
 
