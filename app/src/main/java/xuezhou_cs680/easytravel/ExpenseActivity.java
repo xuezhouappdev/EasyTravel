@@ -131,9 +131,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
         });
 
         speaker = new TextToSpeech(this,this);  //Initialize Text to Speech engine (context, listener object)
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
     }
     public void speak(String output){
         //	speaker.speak(output, TextToSpeech.QUEUE_FLUSH, null);for apis before 21

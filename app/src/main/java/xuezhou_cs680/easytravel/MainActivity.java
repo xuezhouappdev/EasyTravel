@@ -89,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentReminder = new Intent(v.getContext(),ReminderActivity.class);
+                startActivity(intentReminder);
+            }
+        });
+
+
 
 
 

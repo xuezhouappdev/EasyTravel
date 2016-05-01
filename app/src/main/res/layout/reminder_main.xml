@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}"
+    android:background="#000000" >
+
+    <EditText
+        android:id="@+id/enterdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="58dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="What to do..."
+        android:textSize="25sp" />
+
+    <TextClock
+        android:id="@+id/clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/enterdata"
+        android:layout_marginTop="26dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:format12Hour="EEE MMM dd hh:mm:ss aa zzz yyyy"/>
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@id/clock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+    </ListView>
+
+</RelativeLayout>
