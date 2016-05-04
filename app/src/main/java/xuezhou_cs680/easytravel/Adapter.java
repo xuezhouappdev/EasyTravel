@@ -13,13 +13,13 @@ import java.util.ArrayList;
  * Created by Kun on 4/28/16.
  */
 public class Adapter extends ArrayAdapter<String> {
-    //declarations
+    //declarations of city, date and amount arraylist
     ArrayList<String> city= new ArrayList<String>();
     ArrayList<String> date= new ArrayList<String>();
     ArrayList<String> amt= new ArrayList<String>();
     Context c;
-    LayoutInflater inflater;
-
+    LayoutInflater inflater;  //create a new LayoutInflater
+    //An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. The Adapter provides access to the data items. The Adapter is also responsible for making a View for each item in the data set.
     public Adapter(Context context,ArrayList<String> city,ArrayList<String> date,ArrayList<String> amt){
         super(context,R.layout.item_layout_expk,city);
 
@@ -30,7 +30,7 @@ public class Adapter extends ArrayAdapter<String> {
     }
 
     //inner class shall hold our views for each row
-    public class ViewHolder{
+    public class ViewHolder{ //use custom ViewHolder implementations to store data
         TextView city;
         TextView time;
         TextView amt;
@@ -38,18 +38,18 @@ public class Adapter extends ArrayAdapter<String> {
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
+        if (convertView == null) {  //Use with getSystemService(Class) to retrieve a LayoutInflater for inflating layout resources in this context
             inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.item_layout_expk, null);
         }
         //our viewholder object
         final ViewHolder holder = new ViewHolder();
-        //initialize our views
+        //initialize the views
         holder.city = (TextView) convertView.findViewById(R.id.where);
         holder.time = (TextView) convertView.findViewById(R.id.when);
         holder.amt = (TextView) convertView.findViewById(R.id.amount);
 
-        //assign data
+        //assign data to the ViewHolder
         holder.city.setText(city.get(position));
         holder.time.setText(date.get(position));
         holder.amt.setText(amt.get(position));

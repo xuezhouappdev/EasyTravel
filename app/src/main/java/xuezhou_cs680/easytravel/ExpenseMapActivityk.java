@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class ExpenseMapActivityk extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    //map coodinate of four restaurant locations
     private static final LatLng LUKE_LOBSTER = new LatLng(42.348934, -71.079442);
     private static final LatLng TORO=new LatLng(42.336994, -71.075925);
     private static final LatLng DUMPLING=new LatLng(42.351590,-71.060671);
@@ -32,11 +33,13 @@ public class ExpenseMapActivityk extends FragmentActivity implements OnMapReadyC
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
         if(mMap==null){
+            // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map)).getMap();
+            // Check if we were successful in obtaining the map.
             if(mMap!=null){
                 mMap.addMarker(new MarkerOptions()  //add marker to map
-                        .position(DUMPLING)
+                        .position(DUMPLING) //position to the map LatLng
                         .title("$40.35") //set title
                         .snippet("Gourmet Dumpling House,Chinese Restaurant") //set snippet of text
                         .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("marker", 100, 100)))); //set image from drawable as marker
@@ -70,17 +73,18 @@ public class ExpenseMapActivityk extends FragmentActivity implements OnMapReadyC
             return;
         }
         mMap.setMyLocationEnabled(true); //enable the my-location layer. need to request permission
-
+         //call the GoogleMap object's setMapType() method, passing one of the type constants defined in GoogleMap
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(LUKE_LOBSTER, zoom));//Animates the movement of the camera from the current position to the position defined in the update
 
     }
+    // first convert it into Bitmap and change its size and then use that bitmap as a custom marker
     public Bitmap resizeMapIcons(String iconName, int width, int height){
         Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(),getResources().getIdentifier(iconName, "drawable", getPackageName()));
         Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, width, height, false);
         return resizedBitmap;
     }
-
+    //Implement the OnMapReadyCallback interface and use the onMapReady(GoogleMap) callback method to get a handle to the GoogleMap
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
