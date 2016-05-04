@@ -32,15 +32,15 @@ import java.util.Locale;
  * Created by Kun on 4/28/16.
  */
 public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
-    EditText location; //declare variables
-    EditText date;
-    EditText dollar_spent;
-    ListView list;
-    String listItems;
-    String location_item = "";
-    String date_item = "";
-    String amt_item = "";
-    String object="";
+    private EditText location; //declare variables
+    private EditText date;
+    private EditText dollar_spent;
+    private ListView list;
+    private String listItems;
+    private String location_item = "";
+    private String date_item = "";
+    private String amt_item = "";
+    private String object="";
     private final String file = "list.txt";
     private FileOutputStream fos;
     private OutputStreamWriter out;
