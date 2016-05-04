@@ -6,11 +6,12 @@
 
     <string name="title_activity_animation">EasyTravel</string>
 
-    <string name="title_activity_expense_map_activityk">Map</string>
+    <string name="title_activity_expense_map_activityk">Expense Map</string>
 
-    <string name="title_activity_calculator">Calculator</string>
+    <string name="title_activity_calculator">Expense Calculator</string>
 
-    <string name="title_activity_expense">ExpenseActivity</string>
+    <string name="title_activity_expense">Travel Expense List</string>
+
     <string name="title_activity_reminder">Reminder</string>
 
 </resources>
