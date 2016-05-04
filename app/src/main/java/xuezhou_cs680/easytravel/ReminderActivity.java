@@ -2,7 +2,6 @@ package xuezhou_cs680.easytravel;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -112,8 +111,8 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         //*** set the date and time ***//
         Calendar c = Calendar.getInstance();
         //c.set(year,month,day,hour,minute);
-        c.set(Calendar.HOUR, 02);
-        c.set(Calendar.MINUTE,39);
+        c.set(Calendar.HOUR, 07);
+        c.set(Calendar.MINUTE,00);
         c.set(Calendar.SECOND, 00);
         c.set(Calendar.AM_PM, Calendar.PM);
 
@@ -127,7 +126,7 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
 
         super.onCreateOptionsMenu(menu);
         MenuItem item1 = menu.add(0, PICK1, Menu.NONE, "Save List");
-        MenuItem item2 = menu.add(0, PICK2, Menu.NONE, "Back To MainMenu");
+        MenuItem item2 = menu.add(0, PICK2, Menu.NONE, "Back");
         MenuItem item3 = menu.add(0, PICK3, Menu.NONE, "Add Entry");
         MenuItem item4 = menu.add(0, PICK4, Menu.NONE, "Delete Entry");
         MenuItem item5 = menu.add(0, PICK5, Menu.NONE, "Update Entry");
