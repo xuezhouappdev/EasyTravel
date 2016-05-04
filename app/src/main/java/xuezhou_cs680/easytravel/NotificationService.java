@@ -39,7 +39,7 @@ public class NotificationService extends Service {
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingNotificationIntent = PendingIntent.getActivity(
                 this.getApplicationContext(), 0, intent1,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_ONE_SHOT);
         Notification notification=new Notification();
         notification.icon=R.drawable.icon;
         notification.tickerText="Alert!";
