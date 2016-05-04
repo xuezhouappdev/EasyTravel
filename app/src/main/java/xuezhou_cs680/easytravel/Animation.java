@@ -1,5 +1,11 @@
 package xuezhou_cs680.easytravel;
 
+
+
+//  this code  provided by wensi tang, we using viewFlipper to implement animation
+
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,19 +16,18 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+
+
 public class Animation extends AppCompatActivity {
 
     float startposition;
     ViewFlipper viewFlipper = null;
     private GestureDetector gestureDetector = null;
     private Button bt ;
-    //testing
 
 
 
-    //testing
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_animation);
         init();
@@ -31,32 +36,26 @@ public class Animation extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
         bt=(Button)findViewById(R.id.button01);
+            bt.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v) {
 
+                    viewFlipper.setAutoStart(true);
+                    viewFlipper.setFlipInterval(3000);
 
-
-
-        bt.setOnClickListener(new View.OnClickListener(){
-
-            public void onClick(View v) {
+                if(viewFlipper.isAutoStart() && !viewFlipper.isFlipping()){
+                    viewFlipper.startFlipping();
+                }
 
                 Toast.makeText(getApplicationContext(), "Start your trip now", Toast.LENGTH_LONG).show();
 
             Intent intentanimation = new Intent(v.getContext(), MainActivity.class);
                 startActivity(intentanimation);
 
+            }
 
+            });
 
         }
-
-
-        });
-
-
-
-
-
-
-    } //onCreate()
 
 
     private void init() {
@@ -69,27 +68,27 @@ public class Animation extends AppCompatActivity {
     }
 
 
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
+           public boolean onTouchEvent(MotionEvent event) {
+            switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 startposition = event.getX();
 
                 break;
 
-            case MotionEvent.ACTION_UP:
+               case MotionEvent.ACTION_UP:
 
                 if (event.getX() > startposition) {
-                    viewFlipper.setInAnimation(this, R.anim.push_left_in);
-                    viewFlipper.setOutAnimation(this, R.anim.push_left_out);
+                    viewFlipper.setInAnimation(this, R.anim.push_right_in);
+                    viewFlipper.setOutAnimation(this, R.anim.push_right_out);
                     viewFlipper.showNext();
 
 
                 } else if (event.getX() < startposition) {
-                    viewFlipper.setInAnimation(this, R.anim.push_right_in);
-                    viewFlipper.setOutAnimation(this, R.anim.push_right_out);
+                    viewFlipper.setInAnimation(this, R.anim.push_left_in);
+                    viewFlipper.setOutAnimation(this, R.anim.push_left_out);
                     viewFlipper.showNext();
                 }
-                break;
+              else  break;
         }
 
         return super.onTouchEvent(event);
@@ -107,4 +106,4 @@ public class Animation extends AppCompatActivity {
 
 
 
-}//class ends
+}
