@@ -95,22 +95,25 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
 
 
         Intent alarmIntent = new Intent(this,MyAlarm.class);
-        //create pendingIntent that will start a broadcast
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        //*** set the date and time ***//
-        Calendar c = Calendar.getInstance();
-        //c.set(year,month,day,hour,minute);
-        c.set(Calendar.HOUR, 06);
-        c.set(Calendar.MINUTE,10);
-        c.set(Calendar.SECOND, 20);
-        c.set(Calendar.AM_PM, Calendar.PM);
 
         // create an alarm to trigger to alarmReceiver when the data and time is 5 hours before
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        //create pendingIntent that will start a broadcast
+        //PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent,0);
+
+
+
+        //*** set the date and time ***//
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR, 07);
+        c.set(Calendar.MINUTE,00);
+        c.set(Calendar.SECOND, 00);
+        c.set(Calendar.AM_PM, Calendar.PM);
+
         am.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), 24 * 60 * 60 * 1000, pendingIntent);
 
-        // parameter setting have question
-        //am.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

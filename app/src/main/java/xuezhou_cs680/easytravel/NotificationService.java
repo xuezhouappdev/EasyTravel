@@ -34,22 +34,31 @@ public class NotificationService extends Service {
         NotificationManager mManager = (NotificationManager) this.getApplicationContext()
                 .getSystemService(this.getApplicationContext().NOTIFICATION_SERVICE);
 
+
+
         Intent intent1 = new Intent(this.getApplicationContext(), ReminderActivity.class);
         intent1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingNotificationIntent = PendingIntent.getActivity(
                 this.getApplicationContext(), 0, intent1,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_ONE_SHOT);
+
+
+
         Notification notification=new Notification();
         notification.icon=R.drawable.icon;
         notification.tickerText="Alert!";
         RemoteViews contentView=new RemoteViews(getPackageName(),R.layout.content_notification);
+
 
         contentView.setTextViewText(R.id.text,"Alert");
         notification.contentView=contentView;
         notification.contentIntent= pendingNotificationIntent;
         mManager.notify(1,notification);
     }
+
+
+
     public void onDestroy() {
 
         String tag = "Done";
