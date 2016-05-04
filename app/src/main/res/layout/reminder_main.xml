@@ -31,6 +31,11 @@
         android:textSize="20sp"
         android:format12Hour="EEE MMM dd hh:mm:ss aa zzz yyyy"/>
 
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Notification." />
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/list"

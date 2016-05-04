@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -46,9 +47,9 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
     private static final String tag = "tags";
     private OutputStreamWriter out;
 
-    private NotificationManager mNotificationManager;
+    //private NotificationManager mNotificationManager;
     // private AlarmManager am;
-    private Notification notifyDetails;
+    //private Notification notifyDetails;
 
 
     @Override
@@ -86,8 +87,19 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         } catch (IOException e) {
         }
 
-        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+
         handleNotification();
+
+
+// define a button and the method to close all notification
+        Button cancel = (Button)findViewById(R.id.btn_clear);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                final NotificationManager mManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                mManager.cancelAll();
+            }
+        });
     }
 
 
@@ -100,8 +112,8 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         //*** set the date and time ***//
         Calendar c = Calendar.getInstance();
         //c.set(year,month,day,hour,minute);
-        c.set(Calendar.HOUR, 10);
-        c.set(Calendar.MINUTE,36);
+        c.set(Calendar.HOUR, 02);
+        c.set(Calendar.MINUTE,39);
         c.set(Calendar.SECOND, 00);
         c.set(Calendar.AM_PM, Calendar.PM);
 
@@ -109,8 +121,6 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), 24 * 60 * 60 * 1000, pendingIntent);
 
-        // parameter setting have question
-        //am.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
