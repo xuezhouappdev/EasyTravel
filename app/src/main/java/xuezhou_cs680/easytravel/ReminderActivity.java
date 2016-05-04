@@ -100,9 +100,9 @@ public class ReminderActivity extends Activity implements AdapterView.OnItemClic
         //*** set the date and time ***//
         Calendar c = Calendar.getInstance();
         //c.set(year,month,day,hour,minute);
-        c.set(Calendar.HOUR, 03);
-        c.set(Calendar.MINUTE,56);
-        c.set(Calendar.SECOND, 20);
+        c.set(Calendar.HOUR, 10);
+        c.set(Calendar.MINUTE,36);
+        c.set(Calendar.SECOND, 00);
         c.set(Calendar.AM_PM, Calendar.PM);
 
         // create an alarm to trigger to alarmReceiver when the data and time is 5 hours before
