@@ -32,7 +32,7 @@ import java.util.Locale;
  * Created by Kun on 4/28/16.
  */
 public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
-    EditText location;
+    EditText location; //declare variables
     EditText date;
     EditText dollar_spent;
     ListView list;
@@ -49,11 +49,11 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
     private TextToSpeech speaker;
     private static final String tag = "Widgets";
 
-
+    //create array list to store three variables,'location' 'date' 'amount'
     ArrayList<String> city = new ArrayList<String>();
     ArrayList<String> time = new ArrayList<String>();
     ArrayList<String> amt = new ArrayList<String>();
-
+    // set up the order of option menu list item
     final int PICK1 = Menu.FIRST + 1;
     final int PICK2 = Menu.FIRST + 2;
     final int PICK3 = Menu.FIRST + 3;
@@ -72,29 +72,27 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_expk);
 
-
-
-
         list = (ListView) findViewById(R.id.list_items);
         location = (EditText) findViewById(R.id.location);
         date = (EditText) findViewById(R.id.date);
         dollar_spent = (EditText) findViewById(R.id.dollar_spent);
 
         try {
-            File file=new File(getFilesDir()+"/list.txt");
-            if (file.exists()){
+            File file=new File(getFilesDir()+"/list.txt"); //get the file path
+            if (file.exists()){ //check if the file exists
+                //open stream for reading from file
                 inputStream = openFileInput("list.txt");
                 InputStreamReader in=new InputStreamReader(inputStream);
-                BufferedReader reader= new BufferedReader(in);
-                String str="";
-                while((str=reader.readLine())!=null){
-                    city.add(str.substring(0,str.indexOf(";")));
+                BufferedReader reader= new BufferedReader(in); //set buffered reader
+                String str=""; //initialize the string
+                while((str=reader.readLine())!=null){ //read each line in the txt file, if the line in not empty
+                    city.add(str.substring(0,str.indexOf(";"))); //substirng method, 'location;date;amount'
                     time.add(str.substring(str.indexOf(";")+1,str.lastIndexOf(";")));
                     amt.add(str.substring(str.lastIndexOf(";")+1));
                 }
-                reader.close();
-            }else{
-                city.add("Toro");
+                reader.close(); //close input stream
+            }else{    // if the file doesn't exit; used for the first execution
+                city.add("Toro");   //add specific location, date time to the arraylist
                 city.add("Gourmet");
                 city.add("Lobster");
                 city.add("BonChon");
@@ -119,7 +117,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {   ////set onClick Listener for the list items
                 location_item = String.valueOf(city.get(position));
                 date_item = String.valueOf(time.get(position));
                 amt_item = String.valueOf(amt.get(position));
@@ -175,14 +173,14 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
         int itemID = item.getItemId();
         switch (itemID) {
             case PICK1: //SAVE
-                ((BaseAdapter) list.getAdapter()).notifyDataSetChanged();
-                doThatIO();
-                location.setText("");
+                ((BaseAdapter) list.getAdapter()).notifyDataSetChanged(); //notify change to the adapter
+                doThatIO(); //implement save method
+                location.setText(""); //set up the text box to empty
                 date.setText("");
                 dollar_spent.setText("");
                 return true;
             case PICK2://Close
-                doThatIO();
+                doThatIO(); //save before close
                 this.finish();
 
                 location.setText("");
@@ -191,7 +189,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
                 return true;
             case PICK3://add
 
-                city.add(location.getText().toString().trim());
+                city.add(location.getText().toString().trim()); //get the textbox content and add it to arraylist
                 time.add(date.getText().toString().trim());
                 amt.add(dollar_spent.getText().toString().trim());
 
@@ -204,7 +202,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
                     }
                 }catch (Exception e){}
 
-                ((BaseAdapter) list.getAdapter()).notifyDataSetChanged();
+                ((BaseAdapter) list.getAdapter()).notifyDataSetChanged();//notify change to the adapter
 
                 location.setText("");
                 date.setText("");
@@ -212,7 +210,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
                 return true;
 
             case PICK4://delete
-                for (int i = 0; i < city.size(); i++) {
+                for (int i = 0; i < city.size(); i++) { //for loop to check if input string equals string in the item, if equals, remove
                     if (city.get(i).equals(location_item)) {
                         city.remove(i);
                         time.remove(i);
@@ -228,7 +226,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
                     }
                 }catch (Exception e){}
 
-                ((BaseAdapter) list.getAdapter()).notifyDataSetChanged();
+                ((BaseAdapter) list.getAdapter()).notifyDataSetChanged();//notify change to the adapter
                 location.setText("");
                 date.setText("");
                 dollar_spent.setText("");
@@ -237,12 +235,12 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
                 int index = 0;
 
                 for (int i = 0; i < city.size(); i++) {
-                    if ((city.get(i).equals(location_item))) {
+                    if ((city.get(i).equals(location_item))) { //get the index of the object
                         index = i;
                     }
                 }
 
-                city.set(index, location.getText().toString().trim());
+                city.set(index, location.getText().toString().trim()); //set method; replace that index position using the textinput String
                 time.set(index, date.getText().toString().trim());
                 amt.set(index, dollar_spent.getText().toString().trim());
 
@@ -262,7 +260,7 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
 
                 return true;
 
-            case PICK6: //open calculator activity
+            case PICK6: //open expense map activity
                 this.startActivity(new Intent(this, ExpenseMapActivityk.class));
                 return true;
             case PICK7: //open calculator activity
@@ -273,10 +271,10 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
         return false;
     }
 
-    public void doThatIO(){
+    public void doThatIO(){ //save method
         ArrayList<String> append=new ArrayList<>();
         try{
-            fos=openFileOutput("list.txt",MODE_PRIVATE);
+            fos=openFileOutput("list.txt",MODE_PRIVATE); //open output stream
             out=new OutputStreamWriter(fos);
         }catch (IOException e){
 
@@ -286,21 +284,21 @@ public class ExpenseActivity extends AppCompatActivity implements TextToSpeech.O
             for(int i=0;i<city.size();i++){
                 object="";
                 object=city.get(i)+";"+time.get(i)+";"+amt.get(i);
-                append.add(object);
-                out.write(append.get(i).trim()+"\n");
+                append.add(object); //add to empty arraylist
+                out.write(append.get(i).trim()+"\n");//write the string to txt file
             }
-            out.close();
+            out.close();  //close output stream
         }catch (IOException e){
             Log.e("list",e.getMessage());
         }
     }
     @Override
-    public boolean onKeyUp(int keycode, KeyEvent event){   //
+    public boolean onKeyUp(int keycode, KeyEvent event){   //Called when a key up event has occurred
         super.onKeyUp(keycode, event);
         if (keycode == KeyEvent.KEYCODE_ENTER) {
             doThatIO();
             return true;
         }
-        return true;
+        return true; //If you handled the event, return true. If you want to allow the event to be handled by the next receiver, return false.
     }
 }
