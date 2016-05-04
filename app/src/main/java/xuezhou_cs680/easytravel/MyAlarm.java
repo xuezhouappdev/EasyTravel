@@ -11,9 +11,10 @@ import android.widget.Toast;
 public class MyAlarm extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "Check tomorrow's reminder!!!.",
-                Toast.LENGTH_LONG).show();
+        Toast.makeText(context,"check tomorrow's reminder!",Toast.LENGTH_LONG).show();
         Intent i = new Intent(context, NotificationService.class);
         context.startService(i);
+
+
     }
 }
